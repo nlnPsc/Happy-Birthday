@@ -1,0 +1,277 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Fredoka', sans-serif;
+}
+
+body {
+  background: #d59b8c; /* peach outer background */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Main container */
+.container {
+  background: #efd4a7;
+  width: 100%;
+  max-width: 1000px;
+  padding: 70px 30px;
+  border-radius: 35px;
+
+  /* softer Canva-style border */
+  border: 6px solid #fff6e9;
+
+  /* layered soft shadow */
+  box-shadow:
+    0 20px 40px rgba(0,0,0,0.12),
+    0 5px 15px rgba(0,0,0,0.08);
+
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+/* Typography */
+h1, h2 {
+  letter-spacing: 1px;
+}
+
+.click-text {
+  margin: 25px 0 45px;
+  background: rgba(255,255,255,0.3);
+  border-radius: 25px;
+}
+
+.click-text {
+  margin: 20px 0 40px;
+  font-size: clamp(16px, 3vw, 30px);
+  color: #d35f4b;
+  display: inline-block;
+  padding: 10px 25px;
+}
+
+.sub {
+  font-size: clamp(18px, 3vw, 32px);
+  color: #d35f4b;
+  margin-bottom: 40px;
+}
+
+/* Cake */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.cake {
+  animation: float 3s ease-in-out infinite;
+}
+
+.cake:hover {
+  transform: scale(1.1);
+}
+
+.cake:active {
+  transform: scale(0.95);
+}
+
+/* Cards */
+.cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.card {
+  width: clamp(120px, 22vw, 220px);
+  height: clamp(120px, 22vw, 220px);
+  border-radius: 30px;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* better 3D look */
+  box-shadow:
+    0 15px 25px rgba(0,0,0,0.15),
+    inset 0 -5px 10px rgba(0,0,0,0.08);
+
+  transition: all 0.3s ease;
+}
+
+
+.card img {
+  width: 60%;
+  max-width: 300px;
+  height: auto;
+  object-fit: contain;
+  pointer-events: none;
+  transition: transform 0.3s ease;
+}
+
+.card:hover img {
+  transform: scale(1.1);
+}
+
+
+/* Soft 3D colors */
+.music {
+  background: linear-gradient(145deg, #ffc1b6, #ff9e85);
+}
+
+.camera {
+  background: linear-gradient(145deg, #fff59d, #ffe082);
+}
+
+.letter {
+  background: linear-gradient(145deg, #ffab91, #ff8a65);
+}
+
+
+.card:hover {
+  transform: translateY(-12px);
+  box-shadow:
+    0 20px 35px rgba(0,0,0,0.2),
+    inset 0 -3px 8px rgba(0,0,0,0.05);
+}
+
+.card:active {
+  transform: scale(0.95);
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-box {
+  background: white;
+  padding: 30px;
+  border-radius: 25px;
+  width: 90%;
+  max-width: 450px;
+  animation: pop 0.3s ease;
+}
+
+.close {
+  float: right;
+  cursor: pointer;
+  font-size: 50px;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pop {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+.gallery-section {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.gallery-section h1 {
+  font-size: 36px;
+  color: #d45c45;
+  margin-bottom: 30px;
+}
+
+.gallery {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.photo {
+  background: linear-gradient(145deg, #ff8a65, #ff7043);
+  padding: 18px;
+  border-radius: 30px;
+
+  box-shadow:
+    0 15px 25px rgba(0,0,0,0.15),
+    inset 0 -4px 8px rgba(0,0,0,0.08);
+
+  width: clamp(200px, 30vw, 300px);
+  transition: all 0.3s ease;
+}
+
+.photo:hover {
+  transform: translateY(-8px);
+}
+
+.photo img {
+  width: 100%;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+.photo p {
+  color: white;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.photo-gallery {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.photo-gallery img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.photo-gallery img:hover {
+  transform: scale(1.1);
+}
+
+
+.back-btn {
+  margin-top: 60px;
+  padding: 12px 30px;
+  background: linear-gradient(145deg, #ff8a65, #ff7043);
+  color: white;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
+
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+  transform: translateY(-5px);
+}
+

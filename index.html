@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Birthday Surprise</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- PAGE 1 -->
+<div class="container" id="page1">
+  <h1>Happy Birthday “Name”</h1>
+  <p class="click-text">Click the cake for your surprise</p>
+
+  <img src="C:\pc\OneDrive\Documents\birthday\src\cake.png" class="cake" id="openPage2">
+</div>
+
+<!-- PAGE 2 -->
+<div class="container hidden" id="page2">
+  <h2>These are for you</h2>
+  <p class="sub">Pick one for surprise</p>
+
+ <div class="cards">
+  <div class="card music" onclick="openMusic()">
+    <img src="C:\pc\OneDrive\Documents\birthday\src\music.png" alt="music">
+  </div>
+
+<div class="card letter" onclick="openLetter()">
+    <img src="C:\pc\OneDrive\Documents\birthday\src\letter.png" alt="letter">
+  </div>
+
+  <div class="card camera" onclick="opencamera()">
+    <img src="C:\pc\OneDrive\Documents\birthday\src\camera.png" alt="camera">
+  </div>
+
+</div>
+
+
+<!-- MODAL -->
+<div class="modal hidden" id="modal">
+  <div class="modal-box">
+    <span class="close" onclick="closeModal()">×</span>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
